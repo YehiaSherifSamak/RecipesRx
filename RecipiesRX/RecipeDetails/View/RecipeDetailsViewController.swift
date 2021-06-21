@@ -22,13 +22,12 @@ class RecipeDetailsViewController: UIViewController {
     let disposeBag = DisposeBag()
     var parentVC: RecipesViewController?
     
-    
+  
     static func getVC()-> RecipeDetailsViewController?{
         let storyboard = UIStoryboard.init(name: storyboardID, bundle: .main)
         let viewController = storyboard.instantiateViewController(withIdentifier: viewControllerID) as? RecipeDetailsViewController
         return viewController
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let vc = parentVC{

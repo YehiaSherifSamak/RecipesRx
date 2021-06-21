@@ -25,16 +25,13 @@ class RecipesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        
-        tableView.register(UINib(nibName: RecipeTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: RecipeTableViewCell.identifier)
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         self.tableView.delegate = nil
         self.tableView.dataSource = nil
         setUpTableView()
         setupCellTapHandling()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     func setUpTableView(){
@@ -47,6 +44,7 @@ class RecipesViewController: UIViewController {
         }.disposed(by: disposeBag)
     }
     func setupCellTapHandling() {
+        tableView.register(UINib(nibName: RecipeTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: RecipeTableViewCell.identifier)
       tableView
         .rx
         .modelSelected(Recipe.self)
@@ -56,7 +54,9 @@ class RecipesViewController: UIViewController {
             if let detailedVC = RecipeDetailsViewController.getVC(){
                 detailedVC.parentVC = self
                 self.navigationController?.pushViewController(detailedVC, animated: true)
-                
+                if let selectedRowIndexPath = self.tableView.indexPathForSelectedRow {
+                  self.tableView.deselectRow(at: selectedRowIndexPath, animated: true)
+                }
             }
         })
         .disposed(by: disposeBag)
