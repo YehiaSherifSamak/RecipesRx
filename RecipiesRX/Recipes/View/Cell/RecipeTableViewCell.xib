@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeTableViewCell" rowHeight="59" id="KGk-i7-Jjw" customClass="RecipeTableViewCell" customModule="RecipiesRX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="433" height="59"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="433" height="59"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Deq-1I-nCy">
+                        <rect key="frame" x="5" y="5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="Nob-Vz-i81"/>
+                            <constraint firstAttribute="width" constant="50" id="fux-Af-vxj"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9s-19-vjN">
+                        <rect key="frame" x="75" y="20.5" width="42.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20k-9U-M6F">
+                        <rect key="frame" x="375.5" y="21" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Energy:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocR-d5-3BJ">
+                        <rect key="frame" x="315.5" y="21" width="52" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Deq-1I-nCy" secondAttribute="bottom" constant="5" id="2Rl-T7-0h5"/>
+                    <constraint firstItem="20k-9U-M6F" firstAttribute="leading" secondItem="ocR-d5-3BJ" secondAttribute="trailing" constant="8" id="7H5-bZ-7mI"/>
+                    <constraint firstItem="Deq-1I-nCy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="CoT-K5-uJE"/>
+                    <constraint firstItem="Deq-1I-nCy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="J9t-Ry-aGF"/>
+                    <constraint firstItem="x9s-19-vjN" firstAttribute="leading" secondItem="Deq-1I-nCy" secondAttribute="trailing" constant="20" id="NXS-s4-hxw"/>
+                    <constraint firstItem="20k-9U-M6F" firstAttribute="centerY" secondItem="Deq-1I-nCy" secondAttribute="centerY" id="dLg-5t-weB"/>
+                    <constraint firstItem="x9s-19-vjN" firstAttribute="centerY" secondItem="Deq-1I-nCy" secondAttribute="centerY" id="gG3-me-wxH"/>
+                    <constraint firstAttribute="trailing" secondItem="20k-9U-M6F" secondAttribute="trailing" constant="20" symbolic="YES" id="sDF-3s-1xw"/>
+                    <constraint firstItem="ocR-d5-3BJ" firstAttribute="centerY" secondItem="Deq-1I-nCy" secondAttribute="centerY" id="wKZ-xM-Myk"/>
+                    <constraint firstItem="ocR-d5-3BJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="x9s-19-vjN" secondAttribute="trailing" constant="5" id="wTi-sL-I6a"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="energyLabel" destination="20k-9U-M6F" id="ekr-CT-Y0c"/>
+                <outlet property="mainImageView" destination="Deq-1I-nCy" id="eH8-eS-GMJ"/>
+                <outlet property="nameLabel" destination="x9s-19-vjN" id="Ix0-DP-qzG"/>
+            </connections>
+            <point key="canvasLocation" x="174.63768115942031" y="65.959821428571431"/>
+        </tableViewCell>
+    </objects>
+</document>
