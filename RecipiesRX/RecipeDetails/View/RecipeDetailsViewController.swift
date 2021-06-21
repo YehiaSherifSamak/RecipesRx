@@ -6,8 +6,7 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
+
 
 class RecipeDetailsViewController: UIViewController {
     
@@ -19,9 +18,7 @@ class RecipeDetailsViewController: UIViewController {
     @IBOutlet weak var engergyLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
    
-    let disposeBag = DisposeBag()
-    var parentVC: RecipesViewController?
-    
+    var recipe: Recipe?
   
     static func getVC()-> RecipeDetailsViewController?{
         let storyboard = UIStoryboard.init(name: storyboardID, bundle: .main)
@@ -30,13 +27,9 @@ class RecipeDetailsViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let vc = parentVC{
-            vc.selectedRecipee.subscribe(onNext:{
-               [weak self] recipe in
-                self?.setUpView(recipe: recipe)
-            }).disposed(by: disposeBag)
+        if let unwrappedRecipe = recipe{
+            setUpView(recipe: unwrappedRecipe)
         }
-        
     }
     
     func setUpView(recipe: Recipe){

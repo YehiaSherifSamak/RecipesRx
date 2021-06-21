@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 
 class RecipesViewController: UIViewController {
-
+    
     
     static let storyboardID = "Main"
     static let viewControllerID = "RecipesViewController"
@@ -20,13 +20,10 @@ class RecipesViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     let recipes = Observable.just(Recipe.recipes)
-    let selectedRecipee = BehaviorSubject<Recipe>(value: Recipe(name: "", energy: 0, quantity: 0))
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.delegate = nil
-        self.tableView.dataSource = nil
+        title = "Recipes"
         setUpTableView()
         setupCellTapHandling()
     }
@@ -49,20 +46,14 @@ class RecipesViewController: UIViewController {
         .rx
         .modelSelected(Recipe.self)
         .subscribe(onNext: { [unowned self] recipe in
-            self.selectedRecipee.onNext(recipe)
-            
-            if let detailedVC = RecipeDetailsViewController.getVC(){
-                detailedVC.parentVC = self
-                self.navigationController?.pushViewController(detailedVC, animated: true)
-                if let selectedRowIndexPath = self.tableView.indexPathForSelectedRow {
-                  self.tableView.deselectRow(at: selectedRowIndexPath, animated: true)
-                }
+            if let navBar = navigationController{
+                RecipeRoute(navigationController: navBar).presentDetailsView(for: recipe)
             }
         })
         .disposed(by: disposeBag)
     }
     
-
-
+    
+    
 }
 
