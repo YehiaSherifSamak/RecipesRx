@@ -20,19 +20,27 @@ class RecipesViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     let recipes = Observable.just(Recipe.recipes)
+    let viewModel = RecipesViewModel()
+    var route : RecipeRoute!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Recipes"
+        if let navBar = navigationController{
+            route = RecipeRoute(navigationController: navBar)
+        }
+        title = viewModel.title
+        navigationController?.navigationBar.prefersLargeTitles = true
         setUpTableView()
         setupCellTapHandling()
+       
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
 
     func setUpTableView(){
-        recipes.bind(to: tableView
+        tableView.register(UINib(nibName: RecipeTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: RecipeTableViewCell.identifier)
+        viewModel.recipes.bind(to: tableView
                         .rx
                         .items(cellIdentifier: RecipeTableViewCell.identifier
                                , cellType: RecipeTableViewCell.self)){
@@ -40,20 +48,16 @@ class RecipesViewController: UIViewController {
             cell.configure(recipe: recipe)
         }.disposed(by: disposeBag)
     }
+    
     func setupCellTapHandling() {
-        tableView.register(UINib(nibName: RecipeTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: RecipeTableViewCell.identifier)
+       
       tableView
         .rx
         .modelSelected(Recipe.self)
         .subscribe(onNext: { [unowned self] recipe in
-            if let navBar = navigationController{
-                RecipeRoute(navigationController: navBar).presentDetailsView(for: recipe)
-            }
+            viewModel.selectedRecipe(recipe, route: route)
         })
         .disposed(by: disposeBag)
     }
-    
-    
-    
 }
 
