@@ -32,32 +32,34 @@ class RecipesViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         setUpTableView()
         setupCellTapHandling()
-       
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-
+    
     func setUpTableView(){
         tableView.register(UINib(nibName: RecipeTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: RecipeTableViewCell.identifier)
-        viewModel.recipes.bind(to: tableView
-                        .rx
-                        .items(cellIdentifier: RecipeTableViewCell.identifier
-                               , cellType: RecipeTableViewCell.self)){
+        viewModel.recipeObservable.bind(to: tableView
+                                            .rx
+                                            .items(cellIdentifier: RecipeTableViewCell.identifier
+                                                   , cellType: RecipeTableViewCell.self)){
             row, recipe, cell in
             cell.configure(recipe: recipe)
         }.disposed(by: disposeBag)
     }
     
     func setupCellTapHandling() {
-       
-      tableView
-        .rx
-        .modelSelected(Recipe.self)
-        .subscribe(onNext: { [unowned self] recipe in
-            viewModel.selectedRecipe(recipe, route: route)
-        })
-        .disposed(by: disposeBag)
+        
+        tableView
+            .rx
+            .itemSelected.do(onNext: { [weak self] indexPath in
+                guard let strongSelf = self else {return}
+                strongSelf.viewModel.selectedRecipe(for: indexPath, route: strongSelf.route)
+            })
+        .subscribe().disposed(by: disposeBag)
     }
+    
+    
 }
 

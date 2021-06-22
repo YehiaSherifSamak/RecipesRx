@@ -23,8 +23,8 @@ class RecipeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(recipe: Recipe){
+    func configure(recipe: RecipeUIModel){
         nameLabel?.text = recipe.name
-        energyLabel?.text = String(recipe.energy)
+        energyLabel?.text = recipe.energy
     }
 }

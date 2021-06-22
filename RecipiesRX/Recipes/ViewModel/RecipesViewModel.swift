@@ -10,9 +10,13 @@ import RxSwift
 
 class RecipesViewModel{
     let title = "Recipes"
-    let recipes = Observable.just(Recipe.recipes)
+    private let recipes = Recipe.recipes
+    let recipeObservable: Observable<[RecipeUIModel]>
     
-    func selectedRecipe(_ recipe: Recipe, route: RecipeRoute){
-        route.presentDetailsView(for: recipe)
+    func selectedRecipe(for index: IndexPath, route: RecipeRoute){
+        route.presentDetailsView(for: recipes[index.row])
+    }
+    init() {
+        recipeObservable = Observable.just(recipes.map{RecipeUIModel(recipe: $0)})
     }
 }
