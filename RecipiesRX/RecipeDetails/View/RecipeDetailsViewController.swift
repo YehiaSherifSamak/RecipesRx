@@ -18,7 +18,7 @@ class RecipeDetailsViewController: UIViewController {
     @IBOutlet weak var engergyLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
    
-    var recipe: Recipe?
+    var recipeViewModel: RecipeDetailsViewModel!
   
     static func getVC()-> RecipeDetailsViewController?{
         let storyboard = UIStoryboard.init(name: storyboardID, bundle: .main)
@@ -27,15 +27,13 @@ class RecipeDetailsViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let unwrappedRecipe = recipe{
-            setUpView(recipe: unwrappedRecipe)
-        }
+        setUpView()
     }
     
-    func setUpView(recipe: Recipe){
-        titleLabel.text = recipe.name
-        engergyLabel.text = String(recipe.energy)
-        quantityLabel.text = String(recipe.quantity)
+    func setUpView(){
+        titleLabel.text = recipeViewModel.name
+        engergyLabel.text = recipeViewModel.energy
+        quantityLabel.text = recipeViewModel.quantity
     }
     
     

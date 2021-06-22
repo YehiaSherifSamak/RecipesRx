@@ -15,6 +15,7 @@ class RecipeDetailsConfigurator{
     }
     
     func config(view: RecipeDetailsViewController){
-        view.recipe = recipe
+        let viewModel = RecipeDetailsViewModel(recipe: recipe)
+        view.recipeViewModel = viewModel
     }
 }
