@@ -55,6 +55,10 @@ class RecipesViewController: UIViewController {
             .rx
             .itemSelected.do(onNext: { [weak self] indexPath in
                 guard let strongSelf = self else {return}
+                                      
+                 /* Why here you passed the route in the parameters
+                      1. You can create the route directly from here and pass the selected recipe to the route
+                      2. You can create the route from the viewmodel and pass it here to the view */
                 strongSelf.viewModel.selectedRecipe(for: indexPath, route: strongSelf.route)
             })
         .subscribe().disposed(by: disposeBag)
