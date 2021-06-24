@@ -23,6 +23,9 @@
 		85DF829C2681E19600C2978A /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DF829B2681E19600C2978A /* RecipesViewModel.swift */; };
 		85F01FB026823704008E12AF /* RecipeUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F01FAF26823704008E12AF /* RecipeUIModel.swift */; };
 		85F01FB326823DAA008E12AF /* RecipeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F01FB226823DAA008E12AF /* RecipeDetailsViewModel.swift */; };
+		85F61CC926847EC4003E2D34 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85F61CC826847EC4003E2D34 /* Login.storyboard */; };
+		85F61CCB26847F78003E2D34 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F61CCA26847F78003E2D34 /* LoginViewController.swift */; };
+		85F61CCE2684A568003E2D34 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F61CCD2684A568003E2D34 /* LoginViewModel.swift */; };
 		8616DA0DDBADFAFB37BB6C60 /* Pods_RecipiesRX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21863DB6588CA45AE7679EFC /* Pods_RecipiesRX.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +49,9 @@
 		85DF829B2681E19600C2978A /* RecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		85F01FAF26823704008E12AF /* RecipeUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeUIModel.swift; sourceTree = "<group>"; };
 		85F01FB226823DAA008E12AF /* RecipeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewModel.swift; sourceTree = "<group>"; };
+		85F61CC826847EC4003E2D34 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		85F61CCA26847F78003E2D34 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		85F61CCD2684A568003E2D34 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		98AD73D6536939343BC017C5 /* Pods-RecipiesRX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipiesRX.debug.xcconfig"; path = "Target Support Files/Pods-RecipiesRX/Pods-RecipiesRX.debug.xcconfig"; sourceTree = "<group>"; };
 		9EA29372D93FD83345BCFCB2 /* Pods-RecipiesRX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipiesRX.release.xcconfig"; path = "Target Support Files/Pods-RecipiesRX/Pods-RecipiesRX.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +89,7 @@
 		85257EBE267F8251006E2F49 /* RecipiesRX */ = {
 			isa = PBXGroup;
 			children = (
+				85F61CC626847E91003E2D34 /* Login */,
 				85257EDC268087FB006E2F49 /* RecipeDetails */,
 				85257ED6267F90CF006E2F49 /* Recipes */,
 				85257ED5267F8D79006E2F49 /* Enity */,
@@ -184,6 +191,32 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		85F61CC626847E91003E2D34 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				85F61CCC26849FED003E2D34 /* ViewModel */,
+				85F61CC726847E9F003E2D34 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		85F61CC726847E9F003E2D34 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				85F61CC826847EC4003E2D34 /* Login.storyboard */,
+				85F61CCA26847F78003E2D34 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		85F61CCC26849FED003E2D34 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				85F61CCD2684A568003E2D34 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E8346DDEA73E623E94FFAB54 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +295,7 @@
 			files = (
 				85257EE22680885B006E2F49 /* RecipeDetails.storyboard in Resources */,
 				85257ECC267F8253006E2F49 /* LaunchScreen.storyboard in Resources */,
+				85F61CC926847EC4003E2D34 /* Login.storyboard in Resources */,
 				85257EC9267F8253006E2F49 /* Assets.xcassets in Resources */,
 				85257EC7267F8251006E2F49 /* Main.storyboard in Resources */,
 				85257EDB267F98B1006E2F49 /* RecipeTableViewCell.xib in Resources */,
@@ -317,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85F61CCB26847F78003E2D34 /* LoginViewController.swift in Sources */,
 				85F01FB026823704008E12AF /* RecipeUIModel.swift in Sources */,
 				85257EC4267F8251006E2F49 /* RecipesViewController.swift in Sources */,
 				85257EE026808847006E2F49 /* RecipeDetailsViewController.swift in Sources */,
@@ -324,6 +359,7 @@
 				85257EC0267F8251006E2F49 /* AppDelegate.swift in Sources */,
 				85257EC2267F8251006E2F49 /* SceneDelegate.swift in Sources */,
 				85257ED4267F8332006E2F49 /* Recipe.swift in Sources */,
+				85F61CCE2684A568003E2D34 /* LoginViewModel.swift in Sources */,
 				85F01FB326823DAA008E12AF /* RecipeDetailsViewModel.swift in Sources */,
 				85DF829C2681E19600C2978A /* RecipesViewModel.swift in Sources */,
 				85257EE52680E03F006E2F49 /* RecipeDetalisConfigurator.swift in Sources */,
