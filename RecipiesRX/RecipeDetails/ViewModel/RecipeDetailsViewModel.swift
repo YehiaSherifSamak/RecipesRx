@@ -9,7 +9,7 @@ import Foundation
 
 class RecipeDetailsViewModel{
     private let recipe: Recipe
-    private let coordinator: RecipeDetailsCoordionator
+    private weak var coordinator: RecipeDetailsCoordionator?
     
     var name: String {return recipe.name}
     var energy: String {return String(recipe.energy)}
@@ -21,6 +21,6 @@ class RecipeDetailsViewModel{
     }
     
     func viewDidDispear(){
-        coordinator.dismiss()
+        coordinator?.dismiss()
     }
 }

@@ -15,7 +15,7 @@ class LoginViewModel{
     let title = "Login"
     
     //MARK: Private attribute
-    let coordinator: LoginCoordinator
+    private weak var coordinator: LoginCoordinator?
     
     init(coordinator: LoginCoordinator) {
         self.coordinator = coordinator
@@ -31,7 +31,7 @@ extension LoginViewModel{
     }
     
     func loginButtonTapped(){
-        coordinator.startRecipes()
+        coordinator?.startRecipes()
     }
 }
 //MARK: Private Function

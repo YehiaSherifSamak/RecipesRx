@@ -14,13 +14,13 @@ class RecipesViewModel{
     
     
     private let recipes = Recipe.recipes
-    private let coordinator: RecipesCoordinator
+    private weak var coordinator: RecipesCoordinator?
     
     
     let recipeObservable: Observable<[RecipeUIModel]>
     
     func selectedRecipe(for index: IndexPath){
-        coordinator.startRecipeDetails(recipe: recipes[index.row])
+        coordinator?.startRecipeDetails(recipe: recipes[index.row])
     }
     
     init(coordinator: RecipesCoordinator) {
@@ -29,6 +29,6 @@ class RecipesViewModel{
     }
     
     func viewDidDispear(){
-        coordinator.dismiss()
+        coordinator?.dismiss()
     }
 }
