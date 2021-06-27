@@ -15,27 +15,36 @@ class RecipesViewController: UIViewController {
     static let storyboardID = "Main"
     static let viewControllerID = "RecipesViewController"
     
+    static func getVC(viewModel: RecipesViewModel)-> RecipesViewController?{
+        let storyboard = UIStoryboard.init(name: storyboardID, bundle: .main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: viewControllerID) as? RecipesViewController
+        viewController?.viewModel = viewModel
+        return viewController
+    }
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     
     private let disposeBag = DisposeBag()
     let recipes = Observable.just(Recipe.recipes)
-    let viewModel = RecipesViewModel()
-    var route : RecipeRoute!
+    var viewModel: RecipesViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let navBar = navigationController{
-            route = RecipeRoute(navigationController: navBar)
-        }
         title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
         setUpTableView()
         setupCellTapHandling()
         
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+   
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if self.isMovingFromParent {
+            viewModel.viewDidDispear()
+        }
     }
     
     func setUpTableView(){
@@ -54,12 +63,7 @@ class RecipesViewController: UIViewController {
         tableView
             .rx
             .itemSelected.do(onNext: { [weak self] indexPath in
-                guard let strongSelf = self else {return}
-                                      
-                 /* Why here you passed the route in the parameters
-                      1. You can create the route directly from here and pass the selected recipe to the route
-                      2. You can create the route from the viewmodel and pass it here to the view */
-                strongSelf.viewModel.selectedRecipe(for: indexPath, route: strongSelf.route)
+                self?.viewModel.selectedRecipe(for: indexPath)
             })
         .subscribe().disposed(by: disposeBag)
     }

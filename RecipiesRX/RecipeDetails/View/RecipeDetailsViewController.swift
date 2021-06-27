@@ -18,11 +18,12 @@ class RecipeDetailsViewController: UIViewController {
     @IBOutlet weak var engergyLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
    
-    var recipeViewModel: RecipeDetailsViewModel!
+    var viewModel: RecipeDetailsViewModel!
   
-    static func getVC()-> RecipeDetailsViewController?{
+    static func getVC(viewModel: RecipeDetailsViewModel)-> RecipeDetailsViewController?{
         let storyboard = UIStoryboard.init(name: storyboardID, bundle: .main)
         let viewController = storyboard.instantiateViewController(withIdentifier: viewControllerID) as? RecipeDetailsViewController
+        viewController?.viewModel = viewModel
         return viewController
     }
     override func viewDidLoad() {
@@ -30,10 +31,18 @@ class RecipeDetailsViewController: UIViewController {
         setUpView()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if self.isMovingFromParent {
+            viewModel.viewDidDispear()
+        }
+    }
+    
     func setUpView(){
-        titleLabel.text = recipeViewModel.name
-        engergyLabel.text = recipeViewModel.energy
-        quantityLabel.text = recipeViewModel.quantity
+        titleLabel.text = viewModel.name
+        engergyLabel.text = viewModel.energy
+        quantityLabel.text = viewModel.quantity
     }
     
     

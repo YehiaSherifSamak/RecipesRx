@@ -10,18 +10,29 @@ import RxSwift
 import RxCocoa
 
 class LoginViewController: UIViewController {
+    
     @IBOutlet weak var emailTextFeild: UITextField!
     @IBOutlet weak var passwordTextFeild: UITextField!
-   
     @IBOutlet weak var loginButton: UIButton!
     
-    var viewModel: LoginViewModel = LoginViewModel()
+    var viewModel: LoginViewModel!
     let disposeBag = DisposeBag()
     
+    static let storyboardID = "Login"
+    static let viewControllerID = "LoginViewController"
+    
+    static func getVC(viewModel: LoginViewModel)-> LoginViewController?{
+        let storyboard = UIStoryboard.init(name: storyboardID, bundle: .main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: viewControllerID) as? LoginViewController
+        viewController?.viewModel = viewModel
+        return viewController
+    }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setupEmailTextFeild()
         setupPasswordTextFeild()
+        self.title = viewModel.title
         viewModel.isValid().bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
     }
     
@@ -47,7 +58,7 @@ class LoginViewController: UIViewController {
     
 
     @IBAction func loginButtonPressed(_ sender: Any) {
-       
+        viewModel.loginButtonTapped()
     }
     
 
