@@ -28,11 +28,25 @@
 		85F61CD32688D8E9003E2D34 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F61CD22688D8E9003E2D34 /* LoginCoordinator.swift */; };
 		85F61CD62688F82F003E2D34 /* RecipesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F61CD52688F82F003E2D34 /* RecipesCoordinator.swift */; };
 		85F61CD9268912BD003E2D34 /* RecipeDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F61CD8268912BD003E2D34 /* RecipeDetailsCoordinator.swift */; };
+		85F61CE12689C146003E2D34 /* RecipiesRXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F61CE02689C146003E2D34 /* RecipiesRXTests.swift */; };
 		8616DA0DDBADFAFB37BB6C60 /* Pods_RecipiesRX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21863DB6588CA45AE7679EFC /* Pods_RecipiesRX.framework */; };
+		862BBF6042FBD4F5FB23B2C0 /* Pods_RecipiesRXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543708F3639C9429D85482CC /* Pods_RecipiesRXTests.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85F61CE32689C146003E2D34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85257EB4267F8251006E2F49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85257EBB267F8251006E2F49;
+			remoteInfo = RecipiesRX;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		21863DB6588CA45AE7679EFC /* Pods_RecipiesRX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipiesRX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E787995D38FB7205D3005EB /* Pods-RecipiesRXTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipiesRXTests.release.xcconfig"; path = "Target Support Files/Pods-RecipiesRXTests/Pods-RecipiesRXTests.release.xcconfig"; sourceTree = "<group>"; };
+		543708F3639C9429D85482CC /* Pods_RecipiesRXTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipiesRXTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85257EBC267F8251006E2F49 /* RecipiesRX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipiesRX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85257EBF267F8251006E2F49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85257EC1267F8251006E2F49 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +70,12 @@
 		85F61CD22688D8E9003E2D34 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		85F61CD52688F82F003E2D34 /* RecipesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCoordinator.swift; sourceTree = "<group>"; };
 		85F61CD8268912BD003E2D34 /* RecipeDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsCoordinator.swift; sourceTree = "<group>"; };
+		85F61CDE2689C146003E2D34 /* RecipiesRXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipiesRXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85F61CE02689C146003E2D34 /* RecipiesRXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipiesRXTests.swift; sourceTree = "<group>"; };
+		85F61CE22689C146003E2D34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98AD73D6536939343BC017C5 /* Pods-RecipiesRX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipiesRX.debug.xcconfig"; path = "Target Support Files/Pods-RecipiesRX/Pods-RecipiesRX.debug.xcconfig"; sourceTree = "<group>"; };
 		9EA29372D93FD83345BCFCB2 /* Pods-RecipiesRX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipiesRX.release.xcconfig"; path = "Target Support Files/Pods-RecipiesRX/Pods-RecipiesRX.release.xcconfig"; sourceTree = "<group>"; };
+		ADD56500DE8893DB2BE401B3 /* Pods-RecipiesRXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipiesRXTests.debug.xcconfig"; path = "Target Support Files/Pods-RecipiesRXTests/Pods-RecipiesRXTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +87,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85F61CDB2689C146003E2D34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862BBF6042FBD4F5FB23B2C0 /* Pods_RecipiesRXTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -76,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				85257EBE267F8251006E2F49 /* RecipiesRX */,
+				85F61CDF2689C146003E2D34 /* RecipiesRXTests */,
 				85257EBD267F8251006E2F49 /* Products */,
 				F8A2AB41C554E571AF985A34 /* Pods */,
 				E8346DDEA73E623E94FFAB54 /* Frameworks */,
@@ -86,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				85257EBC267F8251006E2F49 /* RecipiesRX.app */,
+				85F61CDE2689C146003E2D34 /* RecipiesRXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,10 +259,20 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		85F61CDF2689C146003E2D34 /* RecipiesRXTests */ = {
+			isa = PBXGroup;
+			children = (
+				85F61CE02689C146003E2D34 /* RecipiesRXTests.swift */,
+				85F61CE22689C146003E2D34 /* Info.plist */,
+			);
+			path = RecipiesRXTests;
+			sourceTree = "<group>";
+		};
 		E8346DDEA73E623E94FFAB54 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				21863DB6588CA45AE7679EFC /* Pods_RecipiesRX.framework */,
+				543708F3639C9429D85482CC /* Pods_RecipiesRXTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -244,6 +282,8 @@
 			children = (
 				98AD73D6536939343BC017C5 /* Pods-RecipiesRX.debug.xcconfig */,
 				9EA29372D93FD83345BCFCB2 /* Pods-RecipiesRX.release.xcconfig */,
+				ADD56500DE8893DB2BE401B3 /* Pods-RecipiesRXTests.debug.xcconfig */,
+				2E787995D38FB7205D3005EB /* Pods-RecipiesRXTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -270,6 +310,26 @@
 			productReference = 85257EBC267F8251006E2F49 /* RecipiesRX.app */;
 			productType = "com.apple.product-type.application";
 		};
+		85F61CDD2689C146003E2D34 /* RecipiesRXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85F61CE52689C146003E2D34 /* Build configuration list for PBXNativeTarget "RecipiesRXTests" */;
+			buildPhases = (
+				9CABE4515294E974D79CEB99 /* [CP] Check Pods Manifest.lock */,
+				85F61CDA2689C146003E2D34 /* Sources */,
+				85F61CDB2689C146003E2D34 /* Frameworks */,
+				85F61CDC2689C146003E2D34 /* Resources */,
+				43C04B9A961FF2B5F009FE53 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85F61CE42689C146003E2D34 /* PBXTargetDependency */,
+			);
+			name = RecipiesRXTests;
+			productName = RecipiesRXTests;
+			productReference = 85F61CDE2689C146003E2D34 /* RecipiesRXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -281,6 +341,10 @@
 				TargetAttributes = {
 					85257EBB267F8251006E2F49 = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					85F61CDD2689C146003E2D34 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 85257EBB267F8251006E2F49;
 					};
 				};
 			};
@@ -298,6 +362,7 @@
 			projectRoot = "";
 			targets = (
 				85257EBB267F8251006E2F49 /* RecipiesRX */,
+				85F61CDD2689C146003E2D34 /* RecipiesRXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -316,9 +381,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85F61CDC2689C146003E2D34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		43C04B9A961FF2B5F009FE53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecipiesRXTests/Pods-RecipiesRXTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RecipiesRXTests/Pods-RecipiesRXTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecipiesRXTests/Pods-RecipiesRXTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7EC0B65B8D7CF9839D2518C5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -334,6 +423,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RecipiesRX/Pods-RecipiesRX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CABE4515294E974D79CEB99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RecipiesRXTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C31AF3F6EF243FADFF654C5C /* [CP] Check Pods Manifest.lock */ = {
@@ -383,7 +494,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85F61CDA2689C146003E2D34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85F61CE12689C146003E2D34 /* RecipiesRXTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85F61CE42689C146003E2D34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85257EBB267F8251006E2F49 /* RecipiesRX */;
+			targetProxy = 85F61CE32689C146003E2D34 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		85257EC5267F8251006E2F49 /* Main.storyboard */ = {
@@ -561,6 +688,46 @@
 			};
 			name = Release;
 		};
+		85F61CE62689C146003E2D34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADD56500DE8893DB2BE401B3 /* Pods-RecipiesRXTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RecipiesRXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ysamak17.RecipiesRXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecipiesRX.app/RecipiesRX";
+			};
+			name = Debug;
+		};
+		85F61CE72689C146003E2D34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E787995D38FB7205D3005EB /* Pods-RecipiesRXTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RecipiesRXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ysamak17.RecipiesRXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecipiesRX.app/RecipiesRX";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -578,6 +745,15 @@
 			buildConfigurations = (
 				85257ED1267F8253006E2F49 /* Debug */,
 				85257ED2267F8253006E2F49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85F61CE52689C146003E2D34 /* Build configuration list for PBXNativeTarget "RecipiesRXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85F61CE62689C146003E2D34 /* Debug */,
+				85F61CE72689C146003E2D34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
