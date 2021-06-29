@@ -14,5 +14,6 @@ target 'RecipiesRX' do
     target 'RecipiesRXTests' do
       pod 'RxBlocking', '~> 5'
          pod 'RxTest', '~> 5'
+         pod 'RxCocoa', '~> 5'
 
 end

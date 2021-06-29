@@ -29,6 +29,8 @@
 		85F61CD62688F82F003E2D34 /* RecipesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F61CD52688F82F003E2D34 /* RecipesCoordinator.swift */; };
 		85F61CD9268912BD003E2D34 /* RecipeDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F61CD8268912BD003E2D34 /* RecipeDetailsCoordinator.swift */; };
 		85F61CE12689C146003E2D34 /* RecipiesRXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F61CE02689C146003E2D34 /* RecipiesRXTests.swift */; };
+		85F61CEC2689CC64003E2D34 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F61CEB2689CC64003E2D34 /* LoginViewModelTests.swift */; };
+		85F61CEE2689DD11003E2D34 /* LoginCoordinatorMockup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F61CED2689DD11003E2D34 /* LoginCoordinatorMockup.swift */; };
 		8616DA0DDBADFAFB37BB6C60 /* Pods_RecipiesRX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21863DB6588CA45AE7679EFC /* Pods_RecipiesRX.framework */; };
 		862BBF6042FBD4F5FB23B2C0 /* Pods_RecipiesRXTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543708F3639C9429D85482CC /* Pods_RecipiesRXTests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +75,8 @@
 		85F61CDE2689C146003E2D34 /* RecipiesRXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipiesRXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F61CE02689C146003E2D34 /* RecipiesRXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipiesRXTests.swift; sourceTree = "<group>"; };
 		85F61CE22689C146003E2D34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85F61CEB2689CC64003E2D34 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		85F61CED2689DD11003E2D34 /* LoginCoordinatorMockup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinatorMockup.swift; sourceTree = "<group>"; };
 		98AD73D6536939343BC017C5 /* Pods-RecipiesRX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipiesRX.debug.xcconfig"; path = "Target Support Files/Pods-RecipiesRX/Pods-RecipiesRX.debug.xcconfig"; sourceTree = "<group>"; };
 		9EA29372D93FD83345BCFCB2 /* Pods-RecipiesRX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipiesRX.release.xcconfig"; path = "Target Support Files/Pods-RecipiesRX/Pods-RecipiesRX.release.xcconfig"; sourceTree = "<group>"; };
 		ADD56500DE8893DB2BE401B3 /* Pods-RecipiesRXTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipiesRXTests.debug.xcconfig"; path = "Target Support Files/Pods-RecipiesRXTests/Pods-RecipiesRXTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -262,10 +266,36 @@
 		85F61CDF2689C146003E2D34 /* RecipiesRXTests */ = {
 			isa = PBXGroup;
 			children = (
+				85F61CE82689C83B003E2D34 /* Login */,
 				85F61CE02689C146003E2D34 /* RecipiesRXTests.swift */,
 				85F61CE22689C146003E2D34 /* Info.plist */,
 			);
 			path = RecipiesRXTests;
+			sourceTree = "<group>";
+		};
+		85F61CE82689C83B003E2D34 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				85F61CEA2689C856003E2D34 /* Mocks */,
+				85F61CE92689C84D003E2D34 /* Tests */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		85F61CE92689C84D003E2D34 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				85F61CEB2689CC64003E2D34 /* LoginViewModelTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		85F61CEA2689C856003E2D34 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				85F61CED2689DD11003E2D34 /* LoginCoordinatorMockup.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		E8346DDEA73E623E94FFAB54 /* Frameworks */ = {
@@ -498,7 +528,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85F61CEC2689CC64003E2D34 /* LoginViewModelTests.swift in Sources */,
 				85F61CE12689C146003E2D34 /* RecipiesRXTests.swift in Sources */,
+				85F61CEE2689DD11003E2D34 /* LoginCoordinatorMockup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextFeild: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    var viewModel: LoginViewModel!
+    var viewModel: LoginViewModelProtocol!
     let disposeBag = DisposeBag()
     
     static let storyboardID = "Login"
