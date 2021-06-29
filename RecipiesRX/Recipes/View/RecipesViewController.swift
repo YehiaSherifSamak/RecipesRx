@@ -28,7 +28,7 @@ class RecipesViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     let recipes = Observable.just(Recipe.recipes)
-    var viewModel: RecipesViewModel!
+    var viewModel: RecipesViewModelProtcol!
     
     override func viewDidLoad() {
         super.viewDidLoad()

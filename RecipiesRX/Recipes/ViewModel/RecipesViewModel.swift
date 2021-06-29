@@ -8,16 +8,23 @@
 import Foundation
 import RxSwift
 
-class RecipesViewModel{
+protocol RecipesViewModelProtcol {
+    var title: String {get}
+    var recipeObservable: Observable<[RecipeUIModel]> {get}
+    func selectedRecipe(for index: IndexPath)
+    func viewDidDispear()
+}
+
+class RecipesViewModel: RecipesViewModelProtcol{
     
-    let title = "Recipes"
+    var title = "Recipes"
     
     
-    private let recipes = Recipe.recipes
-    private weak var coordinator: RecipesCoordinator?
+     let recipes = Recipe.recipes
+     weak var coordinator: RecipesCoordinator?
     
     
-    let recipeObservable: Observable<[RecipeUIModel]>
+    var recipeObservable: Observable<[RecipeUIModel]>
     
     func selectedRecipe(for index: IndexPath){
         coordinator?.startRecipeDetails(recipe: recipes[index.row])
