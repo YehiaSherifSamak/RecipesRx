@@ -8,8 +8,8 @@
 import UIKit
 
 class RecipesCoordinator: Coordinator{
+     var parent: Coordinator?
      var childCoordinators: [Coordinator] = []
-     var parentCoordinator: LoginCoordinator?
     
     let navigationController: UINavigationController
     
@@ -29,16 +29,4 @@ class RecipesCoordinator: Coordinator{
         recipeDetailsCoordinator.parent = self
         recipeDetailsCoordinator.start()
     }
-    
-    func childDidFinish(child: Coordinator){
-        if let index = childCoordinators.firstIndex { $0 === child }{
-            childCoordinators.remove(at: index)
-        }
-    }
-    
-    func dismiss(){
-        parentCoordinator?.childDidFinish(child: self)
-    }
-    
-    
 }

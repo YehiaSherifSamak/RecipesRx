@@ -8,6 +8,7 @@
 import UIKit
 
 class LoginCoordinator: Coordinator{
+    var parent: Coordinator?
     var childCoordinators: [Coordinator] = []
     let navigationController: UINavigationController
     
@@ -24,15 +25,7 @@ class LoginCoordinator: Coordinator{
     func startRecipes(){
         let recipesCoordinator = RecipesCoordinator(navigationController: navigationController)
         childCoordinators.append(recipesCoordinator)
-        recipesCoordinator.parentCoordinator = self
+        recipesCoordinator.parent = self
         recipesCoordinator.start()
     }
-    
-    func childDidFinish(child: Coordinator){
-        if let index = childCoordinators.firstIndex { $0 === child }{
-            childCoordinators.remove(at: index)
-        }
-    }
-    
-    
 }

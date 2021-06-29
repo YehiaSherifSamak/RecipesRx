@@ -11,7 +11,7 @@ class RecipeDetailsCoordionator: Coordinator{
     var childCoordinators: [Coordinator] = []
     var recipe: Recipe
     var navigationController: UINavigationController
-    var parent: RecipesCoordinator?
+    var parent: Coordinator?
     
     init(recipe: Recipe, navigationController: UINavigationController) {
         self.recipe = recipe
@@ -22,10 +22,6 @@ class RecipeDetailsCoordionator: Coordinator{
         let viewModel = RecipeDetailsViewModel(recipe: recipe, coordinator: self)
         guard let viewController = RecipeDetailsViewController.getVC(viewModel: viewModel) else {return}
         navigationController.pushViewController(viewController, animated: true)
-    }
-    
-    func dismiss(){
-        parent?.childDidFinish(child: self)
     }
     
 }
