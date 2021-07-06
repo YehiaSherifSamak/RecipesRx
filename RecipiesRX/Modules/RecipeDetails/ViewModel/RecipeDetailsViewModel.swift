@@ -12,8 +12,8 @@ class RecipeDetailsViewModel{
     private weak var coordinator: RecipeDetailsCoordionator?
     
     var name: String {return recipe.name}
-    var energy: String {return String(recipe.energy)}
-    var quantity: String {return String(recipe.quantity)}
+    var energy: String {return String(Int(recipe.energy))}
+    var quantity: String {return String(Int(recipe.quantity))}
     
     init(recipe: Recipe, coordinator: RecipeDetailsCoordionator){
         self.recipe = recipe

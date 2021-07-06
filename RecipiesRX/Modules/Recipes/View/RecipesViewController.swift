@@ -27,7 +27,6 @@ class RecipesViewController: UIViewController {
     
     
     private let disposeBag = DisposeBag()
-    let recipes = Observable.just(Recipe.recipes)
     var viewModel: RecipesViewModelProtcol!
     
     override func viewDidLoad() {
@@ -36,7 +35,7 @@ class RecipesViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         setUpTableView()
         setupCellTapHandling()
-        
+        viewModel.viewDidLoad()
     }
    
     override func viewWillDisappear(_ animated: Bool) {

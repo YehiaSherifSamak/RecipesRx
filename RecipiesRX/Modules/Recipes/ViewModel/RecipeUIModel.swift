@@ -13,7 +13,7 @@ class RecipeUIModel{
         return recipe.name
     }
     var energy: String{
-        return String(recipe.energy)
+        return String(Int(recipe.energy))
     }
     
     init(recipe: Recipe) {
