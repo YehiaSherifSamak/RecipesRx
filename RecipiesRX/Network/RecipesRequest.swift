@@ -9,10 +9,10 @@ import Foundation
 import Moya
 
 
-enum RecipeRoute{
+enum RecipesRequest{
     case getRecipes
 }
-extension RecipeRoute: TargetType{
+extension RecipesRequest: TargetType{
     var baseURL: URL {
         return URL(string: "https://api.edamam.com/")!
     }

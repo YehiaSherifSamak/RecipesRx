@@ -10,8 +10,10 @@ import Moya
 import RxSwift
 
 class RecipesService{
-    private let provider = MoyaProvider<RecipeRoute>()
+    
+    private let provider = MoyaProvider<RecipesRequest>()
     let globalSchedular = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())
+   
     func getRecipes()->Observable<[Recipe]>{
         return provider
             .rx
@@ -19,7 +21,6 @@ class RecipesService{
             .subscribeOn(globalSchedular)
             .asObservable()
             .observeOn(MainScheduler.instance)
-            .share()
             .compactMap { response ->[Recipe] in
                 do{
                     let result = try JSONDecoder().decode(RecipesResult.self, from: response.data)
@@ -27,7 +28,7 @@ class RecipesService{
                 }catch let error{
                     throw error
                 }
-            }
+            }.share()
     }
     
 }

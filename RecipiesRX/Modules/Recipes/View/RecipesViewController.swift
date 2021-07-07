@@ -31,7 +31,7 @@ class RecipesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = viewModel.title
+       // title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
         setUpTableView()
         setupCellTapHandling()
